@@ -276,7 +276,6 @@ document.addEventListener("DOMContentLoaded", function () {
     answerButtons.forEach(function (button) {
       button.addEventListener("click", function () {
 
-        // Prevent multiple clicks
         if (button.disabled) return;
 
         button.disabled = true;
@@ -395,22 +394,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     shareButton.addEventListener("click", async function () {
 
-     const shareData = {
-    title: `I'm ${result.name} — ${result.title}`,
-    text:
-     `I got ${result.name} — ${result.title} 🌿\n` +
-     `in the Heritage Wellness Fest personality quiz!\n` +
-     `https://bridginggenerations.github.io/heritage-wellness-fest-personality-quiz/\n` +
-     `What's your wellness herb? Find out here!\n\n` +
-     `🌿 HERITAGE WELLNESS FEST 2026\n` +
-     `📅 5 December 2026\n` +
-     `⏰ 11AM – 4PM\n` +
-     `📍 Glass Dome, 28 China St, Singapore 049570\n` +
-     `🎟️ FREE ADMISSION!\n\n` +
-    `Register now: https://inheritagesg.com/hwf`
-    };
+      const websiteLink = "https://bridginggenerations.github.io/heritage-wellness-fest-personality-quiz/";
 
-      // Use the phone or browser's native share menu
+      const shareText =
+        `I got ${result.name} — ${result.title} 🌿\n` +
+        `in the Heritage Wellness Fest personality quiz!\n` +
+        `${websiteLink}\n` +
+        `What's your wellness herb? Find out here!\n\n` +
+        `🌿 HERITAGE WELLNESS FEST 2026\n` +
+        `📅 5 December 2026\n` +
+        `⏰ 11AM – 4PM\n` +
+        `📍 Glass Dome, 28 China St, Singapore 049570\n` +
+        `🎟️ FREE ADMISSION!\n\n` +
+        `Register now: https://inheritagesg.com/hwf`;
+
+      const shareData = {
+        title: `I'm ${result.name} — ${result.title}`,
+        text: shareText
+      };
+
       if (navigator.share) {
         try {
           await navigator.share(shareData);
@@ -421,21 +423,18 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         }
       } else {
-        // Fallback: copy the sharing message
         try {
-          await navigator.clipboard.writeText(
-            `${shareData.text}\n\n${shareData.url}`
-          );
+          await navigator.clipboard.writeText(shareText);
 
-          shareButton.textContent = "RESULT LINK COPIED!";
+          shareButton.textContent = "MESSAGE COPIED!";
 
           setTimeout(function () {
             shareButton.textContent = "SHARE MY RESULT";
           }, 2000);
 
         } catch (error) {
-          console.error("Could not copy result link:", error);
-          alert("Unable to copy automatically. Please copy the page link!");
+          console.error("Could not copy result:", error);
+          alert("Unable to copy automatically. Please copy the sharing message manually.");
         }
       }
     });
