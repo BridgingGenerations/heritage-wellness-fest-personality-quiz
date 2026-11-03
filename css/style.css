@@ -865,3 +865,9 @@ button:hover {
     padding-right: 5px;
   }
 }
+
+.result-buttons .restart-btn {
+  display: block;
+  margin: 5px auto 0;
+  transform: none;
+}
