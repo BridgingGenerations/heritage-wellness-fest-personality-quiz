@@ -1,0 +1,863 @@
+/* --- 1. GLOBAL RESET --- */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
+  background-color: #e6c8aa;
+  color: #333333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  padding-left: 30px;
+  width: 100%;
+  height: auto;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  padding-bottom: 30px;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: auto;
+  color: white;
+  padding-left: 30px;
+}
+
+
+/* --- 2. NAVIGATION BAR --- */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #cc3636;
+  width: auto;
+  border-bottom: 2px solid rgb(55, 37, 37);
+}
+
+.logo {
+  display: flex;
+  width: auto;
+  height: auto;
+}
+
+
+/* --- 3. HERO SECTION --- */
+
+.hero-cover {
+  background-size: cover;
+  position: relative;
+  background-position: center;
+  height: 600px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: left;
+
+  opacity: 0;
+
+  animation: slideIn 0.8s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* --- HERO CONTENT --- */
+
+.hero-overlay {
+  color: rgb(59, 48, 34);
+  width: 100%;
+  max-width: 600px;
+  padding-left: 10px;
+  text-align: center;
+}
+
+
+/* ==========================================
+   INTRO HERBS
+========================================== */
+
+.herbsintro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 600px;
+
+  height: auto;
+}
+
+.herbsintro > div {
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* RESPONSIVE HERB SIZE */
+
+.herbsintro img {
+  width: 190px;
+  height: 170px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+
+/* ==========================================
+   INDIVIDUAL HERB POSITIONS
+========================================== */
+
+.corianderintro {
+  transform: translateY(70px);
+}
+
+.pandanintro {
+  padding-left: 20px;
+  margin-top: 50px;
+}
+
+.lemongrassintro {
+  margin-top: 50px;
+}
+
+.tumericintro {
+  padding-left: 20px;
+  padding-right: 20px;
+  transform: translateY(50px);
+}
+
+.gingerintro {
+  transform: translateY(50px);
+}
+
+.galangalintro {
+  transform: translateY(55px);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+/* ==========================================
+   SLOW BOBBING ANIMATION
+========================================== */
+
+.gingerintro {
+  animation: gingerBob 3.5s ease-in-out infinite;
+}
+
+.tumericintro {
+  animation: turmericBob 3.8s ease-in-out infinite;
+}
+
+.lemongrassintro {
+  animation: lemongrassBob 3.6s ease-in-out infinite;
+}
+
+.pandanintro {
+  animation: pandanBob 4s ease-in-out infinite;
+}
+
+.galangalintro {
+  animation: galangalBob 3.7s ease-in-out infinite;
+}
+
+.corianderintro {
+  animation: corianderBob 4.1s ease-in-out infinite;
+}
+
+
+/* ==========================================
+   BOBBING KEYFRAMES
+========================================== */
+
+@keyframes gingerBob {
+  0%,
+  100% {
+    transform: translateY(50px);
+  }
+
+  50% {
+    transform: translateY(38px);
+  }
+}
+
+@keyframes turmericBob {
+  0%,
+  100% {
+    transform: translateY(50px);
+  }
+
+  50% {
+    transform: translateY(35px);
+  }
+}
+
+@keyframes lemongrassBob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes pandanBob {
+  0%,
+  100% {
+    transform: translateY(30px);
+  }
+
+  50% {
+    transform: translateY(15px);
+  }
+}
+
+@keyframes galangalBob {
+  0%,
+  100% {
+    transform: translateY(55px);
+  }
+
+  50% {
+    transform: translateY(40px);
+  }
+}
+
+@keyframes corianderBob {
+  0%,
+  100% {
+    transform: translateY(70px);
+  }
+
+  50% {
+    transform: translateY(55px);
+  }
+}
+
+
+/* ==========================================
+   HERO TEXT
+========================================== */
+
+.quizdescription {
+  padding-left: 30px;
+}
+
+.btn {
+  font-family: "Montserrat", sans-serif;
+
+  display: inline-block;
+
+  padding: 15px 30px;
+  margin-left: 30px;
+
+  color: rgb(91, 65, 65);
+  background-color: #d1a689;
+
+  text-decoration: none;
+
+  border-color: rgb(91, 65, 65);
+  border-style: double;
+  border-radius: 10px;
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #bc4040;
+  color: white;
+
+  transform: scale(1.05);
+
+  box-shadow: 0 4px 12px rgb(91, 65, 65);
+}
+
+
+/* ==========================================
+   FADE OUT
+========================================== */
+
+.fade-out {
+  animation: fadeOut 0.8s ease forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* ==========================================
+   QUIZ SCENE
+========================================== */
+
+#quiz-scene {
+  min-height: 100vh;
+  background-color: #e8c9aa;
+  padding: 60px 20px;
+}
+
+.quiz-container {
+  max-width: 700px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.quiz-container h2 {
+  color: #bc4040;
+
+  padding-bottom: 20px;
+  padding-top: 100px;
+}
+
+.question-text {
+  font-size: 20px;
+  font-weight: bold;
+
+  line-height: 1.6;
+
+  margin-bottom: 35px;
+}
+
+.answer-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  max-width: 450px;
+
+  gap: 18px;
+}
+
+.answer-btn {
+  width: 100%;
+
+  padding: 18px 20px;
+
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+
+  color: #5b4141;
+  background-color: #d1a689;
+
+  border: 2px solid #5b4141;
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.answer-btn:hover {
+  background-color: #bc4040;
+  color: white;
+
+  transform: scale(1.04);
+}
+
+.answer-btn.selected {
+  background-color: #bc4040;
+  color: white;
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+  text-align: right;
+
+  padding: 20px;
+
+  background-color: #cc3636;
+  color: white;
+}
+
+.footer-page {
+  padding-left: 30px;
+}
+
+.footer-logo {
+  display: flex;
+
+  padding-left: 35px;
+  padding-top: 20px;
+}
+
+.footerheads {
+  text-align: left;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+
+  color: white;
+
+  padding-top: 40px;
+  padding-left: 40px;
+
+  column-gap: 20px;
+
+  display: flex;
+
+  word-spacing: 3px;
+  gap: 70px;
+}
+
+.linksfoot {
+  display: flex;
+
+  padding-top: 20px;
+
+  gap: 30px;
+}
+
+.footerlink li {
+  list-style: none;
+}
+
+.footerlink a {
+  justify-content: flex-start;
+
+  padding-left: 40px;
+  margin-top: 10px;
+
+  font-family: "Montserrat", sans-serif;
+
+  color: white;
+  font-weight: bold;
+
+  text-decoration: none;
+
+  display: flex;
+
+  padding-bottom: 20px;
+}
+
+.footerlink {
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.bottom {
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+
+/* ==========================================
+   QUIZ PROGRESS
+========================================== */
+
+.question-number {
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 14px;
+
+  letter-spacing: 2px;
+
+  color: #5b4141;
+
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+
+/* ==========================================
+   RESULT PAGE
+========================================== */
+
+.result-page {
+  width: 100%;
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  padding-bottom: 80px;
+}
+
+.result-label {
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 15px;
+
+  letter-spacing: 2px;
+
+  color: #5b4141;
+
+  padding-top: 40px;
+  padding-bottom: 25px;
+}
+
+.result-image {
+  width: 220px;
+  height: 280px;
+
+  object-fit: contain;
+
+  display: block;
+
+  margin: 0 auto 25px;
+
+  animation:
+    herbEntrance 1.8s ease-out forwards,
+    herbBobble 3s ease-in-out 1.8s infinite;
+}
+
+
+/* ==========================================
+   RESULT HERB ANIMATION
+========================================== */
+
+@keyframes herbEntrance {
+  0% {
+    transform: translateX(-180px) rotate(-8deg);
+    opacity: 0;
+  }
+
+  15% {
+    transform: translateX(120px) rotate(7deg);
+    opacity: 1;
+  }
+
+  28% {
+    transform: translateX(-80px) rotate(-6deg);
+  }
+
+  40% {
+    transform: translateX(55px) rotate(5deg);
+  }
+
+  52% {
+    transform: translateX(-30px) rotate(-3deg);
+  }
+
+  65% {
+    transform: translateX(15px) rotate(2deg);
+  }
+
+  78% {
+    transform: translateX(-7px) rotate(-1deg);
+  }
+
+  100% {
+    transform: translateX(0) rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes herbBobble {
+  0% {
+    transform: translateX(-3px) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateX(3px) rotate(2deg);
+  }
+
+  100% {
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+
+
+/* ==========================================
+   RESULT TEXT
+========================================== */
+
+.result-herb {
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 20px;
+
+  text-transform: uppercase;
+
+  color: #bc4040;
+
+  letter-spacing: 3px;
+
+  padding-bottom: 10px;
+}
+
+.result-page h2 {
+  padding-top: 0;
+  padding-bottom: 15px;
+
+  color: #bc4040;
+}
+
+.result-page h3 {
+  font-size: 16px;
+
+  padding-bottom: 25px;
+
+  color: #5b4141;
+}
+
+.result-description {
+  font-size: 17px;
+
+  line-height: 1.7;
+
+  font-weight: 600;
+
+  margin-bottom: 30px;
+}
+
+
+/* ==========================================
+   WELLNESS REMINDER
+========================================== */
+
+.wellness-reminder {
+  background-color: #d1a689;
+
+  border: 2px solid #5b4141;
+  border-radius: 15px;
+
+  padding: 25px;
+
+  margin: 30px 0;
+}
+
+.wellness-reminder h3 {
+  padding-bottom: 10px;
+}
+
+.wellness-reminder p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+
+/* ==========================================
+   RESTART BUTTON
+========================================== */
+
+.restart-btn {
+  margin-left: 0;
+  margin-top: 20px;
+
+  cursor: pointer;
+}
+
+
+/* ==========================================
+   RESULT ACTION BUTTONS
+========================================== */
+
+.result-buttons {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 14px;
+
+  width: 100%;
+
+  margin-top: 35px;
+}
+
+.result-action-btn {
+  width: min(90%, 380px);
+
+  padding: 16px 24px;
+
+  border-radius: 12px;
+
+  border: 2px solid #5b4141;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+
+/* Share button */
+
+#share-btn {
+  background-color: #bc4040;
+  color: white;
+}
+
+#share-btn:hover {
+  background-color: #a83232;
+
+  transform: scale(1.04);
+}
+
+
+/* Registration button */
+
+.register-btn {
+  background-color: #5b4141;
+  color: white;
+}
+
+.register-btn:hover {
+  background-color: #432f2f;
+
+  transform: scale(1.04);
+}
+
+
+/* Restart button */
+
+.result-buttons .restart-btn {
+  width: min(90%, 380px);
+
+  margin-left: 0;
+  margin-top: 5px;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+  h1 {
+    font-size: 25px;
+  }
+
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .quiz-container {
+    padding: 0 10px;
+  }
+
+  .quiz-container h2 {
+    font-size: 22px;
+    padding-top: 50px;
+  }
+
+  .question-text {
+    font-size: 17px;
+  }
+
+  .answer-btn {
+    font-size: 15px;
+    padding: 16px;
+  }
+
+  .result-page h2 {
+    font-size: 25px;
+  }
+
+
+  /* ==========================================
+     MOBILE INTRO HERBS
+  ========================================== */
+
+  .herbsintro {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .herbsintro img {
+    width: clamp(45px, 14vw, 85px);
+  }
+
+  .pandanintro,
+  .galangalintro,
+  .tumericintro {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
