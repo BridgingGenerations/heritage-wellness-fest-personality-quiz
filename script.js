@@ -395,20 +395,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     shareButton.addEventListener("click", async function () {
 
-      const shareData = {
-        title: `I'm ${result.name} — ${result.title}`,
-        text:
-          `I got ${result.name} — ${result.title} 🌿\n` +
-          `in the Heritage Wellness Fest personality quiz!\n\n` +
-          `What's your wellness herb? Find out here!\n\n` +
-          `🌿 HERITAGE WELLNESS FEST 2026\n` +
-          `📅 5 December 2026\n` +
-          `⏰ 11AM – 4PM\n` +
-          `📍 Glass Dome, 28 China St, Singapore 049570\n` +
-          `🎟️ FREE ADMISSION!\n\n` +
-          `Register now: https://inheritagesg.com/hwf`,
-        url: window.location.href
-      };
+     const shareData = {
+    title: `I'm ${result.name} — ${result.title}`,
+    text:
+     `I got ${result.name} — ${result.title} 🌿\n` +
+     `in the Heritage Wellness Fest personality quiz!\n` +
+     `https://bridginggenerations.github.io/heritage-wellness-fest-personality-quiz/\n` +
+     `What's your wellness herb? Find out here!\n\n` +
+     `🌿 HERITAGE WELLNESS FEST 2026\n` +
+     `📅 5 December 2026\n` +
+     `⏰ 11AM – 4PM\n` +
+     `📍 Glass Dome, 28 China St, Singapore 049570\n` +
+     `🎟️ FREE ADMISSION!\n\n` +
+    `Register now: https://inheritagesg.com/hwf`
+    };
 
       // Use the phone or browser's native share menu
       if (navigator.share) {
