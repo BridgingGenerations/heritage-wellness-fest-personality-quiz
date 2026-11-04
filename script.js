@@ -369,7 +369,22 @@ document.addEventListener("DOMContentLoaded", function () {
             target="_blank"
             rel="noopener noreferrer"
             class="result-action-btn register-btn"
+            id="register-btn"
           >
+          
+          const registerButton = document.getElementById("register-btn");
+
+          registerButton.addEventListener("click", function () {
+
+           gtag("event", "registration_button_clicked", {
+           event_category: "engagement",
+           event_label: result.name,
+           content_type: "wellness_quiz_registration",
+           herb_result: result.name
+           });
+
+          });
+          
             REGISTER FOR HERITAGE WELLNESS FEST
           </a>
 
