@@ -398,6 +398,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //TRACK SHARE BUTTON CLICK
       
     gtag("event", "share_button_clicked", {
+        debug_mode: true,
         event_category: "engagement",
         event_label: result.name,
         content_type: "wellness_quiz_result",
