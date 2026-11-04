@@ -389,11 +389,20 @@ document.addEventListener("DOMContentLoaded", function () {
     // ==========================================
     // SHARE RESULT
     // ==========================================
-
+    
     const shareButton = document.getElementById("share-btn");
 
     shareButton.addEventListener("click", async function () {
-
+      
+    //TRACK SHARE BUTTON CLICK
+      
+    gtag("event", "share_button_clicked", {
+        event_category: "engagement",
+        event_label: result.name,
+        content_type: "wellness_quiz_result",
+        herb_result: result.name
+    });
+      
       const websiteLink = "https://bridginggenerations.github.io/heritage-wellness-fest-personality-quiz/";
 
       const shareText =
