@@ -369,9 +369,7 @@ document.addEventListener("DOMContentLoaded", function () {
             target="_blank"
             rel="noopener noreferrer"
             class="result-action-btn register-btn"
-            id="register-btn"
-          >
-        
+            id="register-btn">
           
             REGISTER FOR HERITAGE WELLNESS FEST
           </a>
